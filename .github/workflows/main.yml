@@ -7,26 +7,15 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
 
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
 
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
-        with:
-          node-version: '14'  # 필요한 Node.js 버전에 맞게 조정
-
-      - name: Install dependencies
-        run: npm install  # 또는 yarn install, 프로젝트에 맞게 수정
-
-      - name: Build project
-        run: npm run build  # 사용 중인 빌드 명령어에 맞게 수정
-
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./build  # 빌드된 파일이 위치한 디렉토리
+          publish_dir: ./  # 모든 파일을 배포
