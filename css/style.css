@@ -5,7 +5,7 @@
  * Licensed under MIT (https://github.com/twbs/bootstrap/blob/master/LICENSE)
  */
 :root {
-  --blue: #007bff;
+  --blue: #26b0ff;
   --indigo: #6610f2;
   --purple: #6f42c1;
   --pink: #e83e8c;
@@ -18,7 +18,7 @@
   --white: #fff;
   --gray: #6c757d;
   --gray-dark: #343a40;
-  --primary: #007bff;
+  --primary: #55d7ff;
   --secondary: #6c757d;
   --success: #28a745;
   --info: #17a2b8;
@@ -221,7 +221,10 @@ button,
 [type="button"],
 [type="reset"],
 [type="submit"] {
-  -webkit-appearance: button; }
+  appearance: button;        /* 표준 속성 */
+  -webkit-appearance: button; /* WebKit 브라우저용 (Safari, 구형 Chrome 등) */
+  -moz-appearance: button;    /* Firefox 브라우저용 */
+}
 
 button:not(:disabled),
 [type="button"]:not(:disabled),
@@ -246,7 +249,10 @@ input[type="date"],
 input[type="time"],
 input[type="datetime-local"],
 input[type="month"] {
-  -webkit-appearance: listbox; }
+  appearance: listbox;        /* 표준 속성 */
+  -webkit-appearance: listbox; /* WebKit 브라우저용 (Safari, 구형 Chrome 등) */
+  -moz-appearance: listbox;    /* Firefox 브라우저용 */
+}
 
 textarea {
   overflow: auto;
@@ -278,7 +284,10 @@ progress {
 
 [type="search"] {
   outline-offset: -2px;
-  -webkit-appearance: none; }
+  appearance: none;        /* 표준 속성 */
+  -webkit-appearance: none; /* WebKit 브라우저용 (Safari, 구형 Chrome 등) */
+  -moz-appearance: none;    /* Firefox 브라우저용 */
+}
 
 [type="search"]::-webkit-search-decoration {
   -webkit-appearance: none; }
@@ -8143,7 +8152,7 @@ body {
     overflow: hidden;
     position: fixed;
     height: 100%;
-    width: 100%; }
+    width: 100%; }ftco-navbar-light
 
 a {
   -webkit-transition: .3s all ease;
@@ -8372,10 +8381,10 @@ h1, h2, h3, h4, h5,
     position: absolute;
     top: 50%;
     left: -12px;
-    width: 40px;
-    height: 40px;
+    width: 30px;
+    height: 30px;
     content: '';
-    background: #3e64ff;
+    background: white;
     z-index: -1;
     -webkit-transform: translateY(-50%);
     -ms-transform: translateY(-50%);
@@ -8385,7 +8394,7 @@ h1, h2, h3, h4, h5,
     -ms-border-radius: 50%;
     border-radius: 50%; }
   .navbar-brand span {
-    color: #fff; }
+    color: black; }
 
 .hero-wrap {
   width: 100%;
@@ -9226,7 +9235,8 @@ textarea.form-control {
 .mfp-with-zoom .mfp-container,
 .mfp-with-zoom.mfp-bg {
   opacity: 0;
-  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;        /* 표준 속성 */
+  -webkit-backface-visibility: hidden; /* WebKit 기반 브라우저용 (Safari, 구형 Chrome 등) */
   -webkit-transition: all 0.3s ease-out;
   -moz-transition: all 0.3s ease-out;
   -o-transition: all 0.3s ease-out;
